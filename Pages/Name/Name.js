@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import { Text, View, Image, TouchableOpacity} from 'react-native';
+import { Text, View, Image, TextInput, SafeAreaView} from 'react-native';
 import {useTranslation} from 'react-i18next';
 import 'react-native-gesture-handler';
-import {gen1} from './../../actions';
+import {name1} from './../../actions';
 import { useDispatch, useSelector } from 'react-redux';
 import BtnButton from '../../Components/Button/Button';
 import {icons} from "../../constants";
@@ -12,35 +12,34 @@ export default function Name({ navigation }) {
 
   let {t} = useTranslation();
   const gender1 = useSelector(state => state.childrens.children1.gender);
-  const [gender, setGender] = useState(null);
+  const [name, setName] = useState(null);
   const dispatch = useDispatch();
-
+  const onChangeName = (text) => {
+    setName(text)
+  }
   return (
     
-        <View style={styled.gender}>
-          <View style={styled.gender__back}>
-            <Image style={styled.gender__backImg}
+        <SafeAreaView style={styled.name}>
+          <View style={styled.name__back}>
+            <Image style={styled.name__backImg}
                     source={icons.back}/>
           </View>
-            <Header style={{flex: 0.1}} onPress={() => navigation.navigate("Auth")} isButtons={false}/>
+            <Header style={{flex: 0.1}} onPress={() => navigation.navigate("Gender")} isButtons={false}/>
             <View 
-              style={styled.gender__container}>
-                <Text style={styled.gender__title}>{t('genderTitle')}</Text>
-                <Text style={styled.gender__descr}>{t('genderDescr')}</Text>
-                <TouchableOpacity style={styled.gender__iconContainer}
-                                  onPress={() => setGender('boy')}>
-                  <Image style={styled.gender__icon}
-                          source={(gender=='boy') ? icons.redBoy : icons.boy} />
-                  <Text style={styled.gender__text}>{t('boy')}</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styled.gender__iconContainer}
-                                  onPress={() => setGender('girl')}>
-                  <Image style={styled.gender__icon}
-                          source={(gender=='girl') ? icons.redGirl : icons.girl} />
-                  <Text style={styled.gender__text}>{t('girl')}</Text>
-                </TouchableOpacity>
-                <BtnButton onPress={() => {dispatch(gen1(gender))}} title={t('next')} buttonStyle={{backgroundColor: '#F55926',borderWidth: 2, borderColor: '#F55926', opacity: gender ? 1 : 0.7}} textStyle={{color: 'rgba(244, 237, 225, 1)', }}/>
+              style={styled.name__container}>
+                <Text style={styled.name__title}>{t('enterName')}</Text>
+                  <Image style={styled.name__icon}
+                          source={(gender1=='boy') ? icons.redBoy : icons.redGirl} />
+                  <Text style={styled.name__text}>{ (gender1=='boy') ? t('boy') : t('girl')}</Text>
+                <Text style={styled.name__text}>{t('name')}</Text>
+                <TextInput
+                        style={styled.name__input}
+                        onChangeText={text => {onChangeName(text)}}
+                        value={name}
+                    />
+                
             </View>
-    </View>
+        <BtnButton onPress={() => {dispatch(name1(name))}} title={t('next')} buttonStyle={{backgroundColor: '#F55926',borderWidth: 2, borderColor: '#F55926', marginBottom: 30, opacity: (name.length > 1) ? 1 : 0.7, pointerEvents: (name.length > 1) ? 'all' : 'none'}} textStyle={{color: 'rgba(244, 237, 225, 1)', }}/>
+    </SafeAreaView>
   );
 }

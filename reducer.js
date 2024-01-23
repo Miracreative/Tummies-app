@@ -50,6 +50,17 @@ const reducer = (state = initialState, action) => {
                     }
                 }
             }
+        case 'NAME1':
+            return {
+                ...state,
+                childrens: {
+                    ...state.childrens,
+                    children1: {
+                        ...state.childrens.children1,
+                        name: action.payload
+                    }
+                }
+            }
 		default:
 			return state
 	}

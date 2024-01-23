@@ -15,5 +15,7 @@
     "genderDescr": "Men and women have different metabolic profiles and nutritionals needs.",
     "boy": "Boy",
     "girl": "Girl",
-    "next": "Next"
+    "next": "Next",
+    "enterName": "Enter the name",
+    "name": "Name"
 }
