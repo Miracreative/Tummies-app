@@ -14,6 +14,10 @@ const firstLocation = require("./../assets/icons/first-location.png")
 const entertament = require("./../assets/icons/entertament.png")
 const catering = require("./../assets/icons/catering.png")
 const backRed = require("./../assets/icons/back-red.png")
+const boy = require("./../assets/icons/boy.png")
+const girl = require("./../assets/icons/girl.png")
+const redBoy = require("./../assets/icons/redBoy.png")
+const redGirl = require("./../assets/icons/redGirl.png")
 
 
 
@@ -33,5 +37,9 @@ export default {
     firstLocation,
     entertament,
     catering,
-    backRed
+    backRed,
+    girl,
+    boy,
+    redBoy,
+    redGirl
 }
