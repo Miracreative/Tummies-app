@@ -1,0 +1,39 @@
+const initialState = {language: 'en',
+                        currentAddress: 'non location',
+                        latitude: 47.4217937,
+                        longitude: -122.083922};
+const reducer = (state = initialState, action) => {
+	switch (action.type) {
+		case 'LNG': 
+            if(state.language == 'en') {
+                return {
+                    ...state,
+                    language: 'ar'
+                }
+            } else if(state.language == 'ar') {
+                return {
+                    ...state,
+                    language: 'en'
+                }
+            }
+        case 'LATITUDE': 
+            return {
+                ...state,
+                latitude: action.payload
+            }
+        case "LONGITUUDE": 
+            return {
+                ...state,
+                longitude: action.payload
+            }
+        case 'LOCATION': 
+            return {
+                ...state,
+                currentAddress: action.payload
+            }
+		default:
+			return state
+	}
+}
+
+export default reducer;
