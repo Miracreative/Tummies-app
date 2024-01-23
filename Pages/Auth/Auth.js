@@ -71,8 +71,8 @@ export default function Auth({navigation}) {
             null : <Text style={styled.auth__error}>Enter the correct phone number</Text>
             }
             <View style={[styled.auth__buttons, isShowKeyboard ? {marginTop: 0} : {marginTop: 'auto'}]}>
-                <BtnButton onPress={() => navigation.navigate('AutoLocation')} title={t('continue')} buttonStyle={{backgroundColor: '#F55926',borderWidth: 2, borderColor: '#F55926', opacity: disable  ? 1 : .7, ointerEvents: disable ? 'all' : 'none'}} textStyle={{color: 'rgba(244, 237, 225, 1)', }}/>
-                <BtnButton onPress={() => navigation.navigate('ChooseLocation')} title={t('logIn')} buttonStyle={{backgroundColor: 'rgba(244, 237, 225, 1)', borderStyle: 'solid', borderWidth: 2, borderColor: 'transparent', width: '50%'}} textStyle={{color: '#0C0300'}}/>
+                <BtnButton onPress={() => navigation.navigate('Gender')} title={t('continue')} buttonStyle={{backgroundColor: '#F55926',borderWidth: 2, borderColor: '#F55926', opacity: disable  ? 1 : .7, ointerEvents: disable ? 'all' : 'none'}} textStyle={{color: 'rgba(244, 237, 225, 1)', }}/>
+                <BtnButton onPress={() => navigation.navigate('Gender')} title={t('logIn')} buttonStyle={{backgroundColor: 'rgba(244, 237, 225, 1)', borderStyle: 'solid', borderWidth: 2, borderColor: 'transparent', width: '50%'}} textStyle={{color: '#0C0300'}}/>
             </View>
         </KeyboardAvoidingView>
     </SafeAreaView>
