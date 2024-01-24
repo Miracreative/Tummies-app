@@ -1,0 +1,32 @@
+.results {
+    flex: 1;
+    background-color: white !important;
+    width: 100%;
+    padding: 40px 10px 20px;
+    &__container {
+        width: 100%;
+    }
+    &__title {
+        color: #0C0300;
+        font-size: 24px;
+        font-weight: 500;
+        margin-bottom: 15px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    &__text {
+        font-size: 14px;
+        font-weight: 300;
+        text-align: center;
+        color: #0C0300;
+        width: 70%;
+        margin: 0 auto;
+        margin-bottom: 75px;
+    }
+    &__dates {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;  
+    }
+}

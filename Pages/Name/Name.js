@@ -39,7 +39,8 @@ export default function Name({ navigation }) {
                     />
                 
             </View>
-        <BtnButton onPress={() => {dispatch(name1(name))}} title={t('next')} buttonStyle={{backgroundColor: '#F55926',borderWidth: 2, borderColor: '#F55926', marginBottom: 30, opacity: (name.length > 1) ? 1 : 0.7, pointerEvents: (name.length > 1) ? 'all' : 'none'}} textStyle={{color: 'rgba(244, 237, 225, 1)', }}/>
+        <BtnButton onPress={() => {dispatch(name1(name))
+                                    navigation.navigate("Age")}} title={t('next')} buttonStyle={{backgroundColor: '#F55926',borderWidth: 2, borderColor: '#F55926', marginBottom: 30, opacity: (name) ? 1 : 0.7, pointerEvents: (name) ? 'auto' : 'none'}} textStyle={{color: 'rgba(244, 237, 225, 1)', }}/>
     </SafeAreaView>
   );
 }

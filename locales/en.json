@@ -17,5 +17,10 @@
     "girl": "Girl",
     "next": "Next",
     "enterName": "Enter the name",
-    "name": "Name"
+    "name": "Name",
+    "ageTitle": "What is your child's age?",
+    "ageText": "Men and women have different metabolic profiles and nutritionals needs.",
+    "resultsTitle": "Your results", 
+    "menu": "menu",
+    "resultsDescr": "Our nutritionist - approved algoritm suggest the following calories breadown for you child"
 }

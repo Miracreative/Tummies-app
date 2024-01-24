@@ -40,8 +40,9 @@ export default function Gender({ navigation }) {
                   <Text style={styled.gender__text}>{t('girl')}</Text>
                 </TouchableOpacity>
                 <BtnButton onPress={() => {dispatch(gen1(gender))
-                                            navigation.navigate('Name')}
-                                            } title={t('next')} buttonStyle={{backgroundColor: '#F55926',borderWidth: 2, borderColor: '#F55926', opacity: gender ? 1 : 0.7, pointerEvents: gender ? 'all' : 'none'}} textStyle={{color: 'rgba(244, 237, 225, 1)', }}/>
+                                            navigation.navigate('Name')
+                                          console.log('name')}
+                                            } title={t('next')} buttonStyle={{backgroundColor: '#F55926',borderWidth: 2, borderColor: '#F55926', opacity: gender ? 1 : 0.7, pointerEvents: gender ? 'auto' : 'none'}} textStyle={{color: 'rgba(244, 237, 225, 1)', }}/>
             </View>
     </View>
   );

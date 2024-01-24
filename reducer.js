@@ -6,7 +6,7 @@ const initialState = {language: 'en',
                             children1: {
                                 gender: '',
                                 name: '',
-                                age: ''
+                                age: 15
                             }
                             
                         }};
@@ -58,6 +58,17 @@ const reducer = (state = initialState, action) => {
                     children1: {
                         ...state.childrens.children1,
                         name: action.payload
+                    }
+                }
+            }
+        case 'AGE1':
+            return {
+                ...state,
+                childrens: {
+                    ...state.childrens,
+                    children1: {
+                        ...state.childrens.children1,
+                        age: action.payload
                     }
                 }
             }
