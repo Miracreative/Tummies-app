@@ -18,6 +18,7 @@ const boy = require("./../assets/icons/boy.png")
 const girl = require("./../assets/icons/girl.png")
 const redBoy = require("./../assets/icons/redBoy.png")
 const redGirl = require("./../assets/icons/redGirl.png")
+const gexagon = require("./../assets/icons/gexagon.png")
 
 
 
@@ -41,5 +42,6 @@ export default {
     girl,
     boy,
     redBoy,
-    redGirl
+    redGirl,
+    gexagon
 }
