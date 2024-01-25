@@ -22,5 +22,16 @@
     "ageText": "Men and women have different metabolic profiles and nutritionals needs.",
     "resultsTitle": "Your results", 
     "menu": "menu",
-    "resultsDescr": "Our nutritionist - approved algoritm suggest the following calories breadown for you child"
+    "resultsDescr": "Our nutritionist - approved algoritm suggest the following calories breadown for you child",
+    "breakfast": "Breakfast",
+    "lunch": "Lunch",
+    "dinner": "Dinner",
+    "snack": "Snack",
+    "plan": "Your Plan",
+    "mounthly": "Monthly",
+    "weekly": "Weekly",
+    "full": "Full",
+    "average": "Average",
+    "little": "Little",
+    "cost": "Breakfast, lunch & dinner"
 }
