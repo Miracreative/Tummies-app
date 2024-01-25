@@ -20,7 +20,8 @@ const redBoy = require("./../assets/icons/redBoy.png")
 const redGirl = require("./../assets/icons/redGirl.png")
 const gexagon = require("./../assets/icons/gexagon.png")
 const bottomFone = require("./../assets/icons/bottom-phone.png")
-
+const soup = require("./../assets/icons/soup.png")
+const porridge = require("./../assets/icons/porridge.png")
 
 
 export default {
@@ -45,5 +46,7 @@ export default {
     redBoy,
     redGirl,
     gexagon,
-    bottomFone
+    bottomFone,
+    soup,
+    porridge
 }

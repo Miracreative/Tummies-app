@@ -5,6 +5,7 @@ import 'react-native-gesture-handler';
 import {age1} from '../../actions';
 import { useDispatch, useSelector } from 'react-redux';
 import BtnButton from '../../Components/Button/Button';
+import MealsList from '../../Components/MealsList/MealsList';
 import {icons} from "../../constants";
 import Header from '../../Components/Header/Header';
 import styled from "./style.scss";
@@ -128,6 +129,7 @@ export default function Results({ navigation }) {
                 <View style={styled.results__dates}>
                   {mealList}
                 </View>
+                <MealsList/>
                 <Text style={styled.results__title}>{t('plan')}</Text>
                 <View style={styled.results__dates}>
                   {longArrList}
