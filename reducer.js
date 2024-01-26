@@ -9,7 +9,12 @@ const initialState = {language: 'en',
                                 age: 15
                             }
                             
-                        }};
+                        },
+                        plan: {
+                            price: 1000,
+                            long: 'sar/mounth'
+                        }
+                    };
 const reducer = (state = initialState, action) => {
 	switch (action.type) {
 		case 'LNG': 
@@ -70,6 +75,22 @@ const reducer = (state = initialState, action) => {
                         ...state.childrens.children1,
                         age: action.payload
                     }
+                }
+            }
+        case 'PRICE': 
+            return {
+                ...state,
+                plan: {
+                    ...state,
+                    price: action.payload
+                }
+            }
+        case 'LONG': 
+            return {
+                ...state,
+                plan: {
+                    ...state,
+                    long: action.payload
                 }
             }
 		default:

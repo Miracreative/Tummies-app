@@ -22,6 +22,8 @@ const gexagon = require("./../assets/icons/gexagon.png")
 const bottomFone = require("./../assets/icons/bottom-phone.png")
 const soup = require("./../assets/icons/soup.png")
 const porridge = require("./../assets/icons/porridge.png")
+const pink = require("./../assets/icons/pink.png")
+const calendar = require("./../assets/icons/calendar.png")
 
 
 export default {
@@ -48,5 +50,7 @@ export default {
     gexagon,
     bottomFone,
     soup,
-    porridge
+    porridge,
+    pink,
+    calendar
 }
