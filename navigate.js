@@ -9,6 +9,7 @@ import Auth from './Pages/Auth/Auth';
 import Name from './Pages/Name/Name';
 import Age from './Pages/Age/Age';
 import Results from './Pages/Results/Results';
+import FirstDay from './Pages/FirstDay/FirstDay';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { useSelector} from 'react-redux';
@@ -67,6 +68,10 @@ export default function Navigate() {
             <Stack.Screen
                     name="Results"
                     component={Results}
+                />
+            <Stack.Screen
+                    name="FirstDay"
+                    component={FirstDay}
                 />
         </Stack.Navigator>
     </NavigationContainer>;

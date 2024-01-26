@@ -33,5 +33,9 @@
     "full": "Full",
     "average": "Average",
     "little": "Little",
-    "cost": "Breakfast, lunch & dinner"
+    "cost": "Breakfast, lunch & dinner",
+    "days": "days & time",
+    "subscr": "Subscription days",
+    "morning": "7 AM to 11 AM (Morning)",
+    "evening": "6 PM to 10 PM (the night before)"
 }

@@ -1,12 +1,14 @@
 .results {
     flex: 1;
-    background-color: white !important;
     width: 100%;
     padding: 40px 0 0px;
-    background-color: #fff;
+    background-color: #FFFFFF;
     &__container {
-        width: 96%;
-        margin: 0 auto;
+        width: 100%;
+        // margin: 0 auto;
+        position: relative;
+        background-color: #fff !important;
+        z-index: 1;
     }
     &__title {
         color: #0C0300;
@@ -68,11 +70,11 @@
         border-width: 1px;
     }
     &__divider {
-        width: 100%;
+        width: 94%;
         height: 1px;
         background-color: #0C0300;
         opacity: .2;
-        margin-bottom: 20px;
+        margin: 0 auto 20px;
     }
     &__box {
         border-radius: 20px;
@@ -132,5 +134,13 @@
         border-width: 5px;
         border-color: rgba(243, 237, 223, 1);
         z-index: -1;
+    }
+    &__pink {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        height: 300px;
+        // z-index: -1;
     }
 }
