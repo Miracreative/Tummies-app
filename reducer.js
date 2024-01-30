@@ -2,6 +2,10 @@ const initialState = {language: 'en',
                         currentAddress: 'non location',
                         latitude: 47.4217937,
                         longitude: -122.083922,
+                        plan: {
+                            sum: 1000,
+                            long: 'sar/hellp'
+                        },
                         childrens: {
                             children1: {
                                 gender: '',
@@ -10,9 +14,9 @@ const initialState = {language: 'en',
                             }
                             
                         },
-                        plan: {
-                            price: 1000,
-                            long: 'sar/mounth'
+                        deliveryDatails: {
+                            time: 'morning',
+                            date: 'Friday, February2, 2024'
                         }
                     };
 const reducer = (state = initialState, action) => {
@@ -77,20 +81,36 @@ const reducer = (state = initialState, action) => {
                     }
                 }
             }
-        case 'PRICE': 
+        case 'SUM': 
             return {
                 ...state,
                 plan: {
-                    ...state,
-                    price: action.payload
+                    sum: action.payload,
+                    ...state.plan
                 }
             }
         case 'LONG': 
             return {
                 ...state,
                 plan: {
-                    ...state,
+                    ...state.plan,
                     long: action.payload
+                }
+            }
+        case 'TIME': 
+            return {
+                ...state,
+                deliveryDatails: {
+                    time: action.payload,
+                    ...state.deliveryDatails
+                }
+            }
+        case 'DATE': 
+            return {
+                ...state,
+                deliveryDatails: {
+                    date: action.payload,
+                    ...state.deliveryDatails
                 }
             }
 		default:

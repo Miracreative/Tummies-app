@@ -123,14 +123,14 @@ export default function Results({ navigation }) {
       descr1: "Serves up to 2000 out of 2663 calories recommendended for you",
       descr2: "5 days a week * 4 weeks",
       descr3: "Skip anytime",
-      price: "1000",
+      sum: 1000,
       long: "sar/mounth"
     },
     {
       descr1: "Serves up to 2000 out of 2663 calories recommendended for you",
       descr2: "5 days a week * 4 weeks",
       descr3: "Skip anytime",
-      price: "250",
+      sum: 250,
       long: "sar/week"
     },
     
@@ -171,14 +171,14 @@ export default function Results({ navigation }) {
                   <Text style={styled.results__descr}>{planDescriptions[long].descr2}</Text>
                   <View style={styled.results__ring}></View>
                   <Text style={styled.results__descr}>{planDescriptions[long].descr3}</Text>
-                  <Text style={styled.results__price}>{planDescriptions[long].price}</Text>
+                  <Text style={styled.results__price}>{planDescriptions[long].sum}</Text>
                   <Text style={styled.results__valute}>{planDescriptions[long].long}</Text>
                   <View style={styled.results__border}></View>
                   <Image  style={styled.results__fone}
                           source={icons.bottomFone} />
                 </View>
                 <BtnButton onPress={() => {
-                                            dispatch(price(planDescriptions[long].price))
+                                            dispatch(price(planDescriptions[long].sum))
                                             dispatch(lon(planDescriptions[long].long))
                                             navigation.navigate("FirstDay")}} title={t('next')} buttonStyle={{backgroundColor: '#F55926',borderWidth: 2, borderColor: '#F55926', marginBottom: 30}} textStyle={{color: 'rgba(244, 237, 225, 1)', }}/>
             </ScrollView>
