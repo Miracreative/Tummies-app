@@ -1,0 +1,89 @@
+.email {
+    flex: 1;
+    background-color: rgba(244, 237, 225, 1);
+    position: relative;
+    &__img {
+        object-fit: contain;
+        margin: 20px auto 0 10%;
+        flex: .6;
+        width: 85%;
+    }
+    &__title {
+        font-weight: 500;
+        font-size: 20px;
+        color: black;
+        margin: 0 auto 20px;
+        text-align: center;
+    }
+    &__text {
+        font-weight: 300;
+        color: #0C0300;
+        text-align: center;
+        margin: 0 auto 20px;
+        font-size: 14px;
+        width: 100%;
+    }
+    &__started {
+        font-size: 24px;
+        text-transform: uppercase;
+        text-align: center;
+        color: white;
+        font-weight: 500;
+    }
+    &__input {
+        background-color: white;
+        margin: 0 auto 40px;
+        width: 90%;
+        border-radius: 20px;
+        border-color: rgba(12, 3, 0, 0.50);
+        border-width: 1px;
+        border-style: solid;
+        font-size: 16px;
+        padding: 15px;
+    }
+    &__buttons {
+        
+        margin-bottom: 20px;
+    }
+    &__error {
+        color: rgba(255, 0, 0, 1);
+        font-size: 14px;
+        text-align: center;
+        font-weight: 500;
+    }
+    &__privacy {
+        width: 90%;
+        margin: 20px auto;
+        text-align: center;
+    }
+    &__stroke {
+        flex-direction: row;
+        width: 90%;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin: 0 auto;
+        font-weight: 300;
+    }
+    &__term {
+        font-weight: 300;
+        color: #0C0300;
+    }
+}
+.wrapper {
+    flex: .55;
+}
+.image {
+    width: 80%;
+    margin: 0 auto 20px;
+    object-fit: contain;
+}
+.back {
+    position: absolute;
+    width: 100%;
+    object-fit: cover;
+    height: 470px;
+    top: 0;
+    left: 0;
+    z-index: -2;
+}
