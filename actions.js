@@ -9,6 +9,3 @@ export const price = (pr) => ({type: "SUM", payload: pr});
 export const lon = (l) => ({type: "LONG", payload: l});
 export const time = (t) => ({type: "TIME", payload: t});
 export const date = (d) => ({type: "DATE", payload: d});
-
-
-
