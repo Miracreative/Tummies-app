@@ -10,6 +10,10 @@
     flex: 1;
     background-color: #F3EDDF;
     width: 100%;
+    // justify-content: flex-start;
+    position: relative;
+    justify-content: space-between;
+
 }
 .wrapper {
     flex: .2;
@@ -23,14 +27,12 @@
     width:80%;
     margin: 0 auto;
     object-fit: contain;
+    flex: 0.2
 }
 .back {
-    position: absolute;
-    width: 100%;
-    object-fit: cover;
-    height: 45%;
-    top: 0;
-    left: 0;
+    flex: 1;
+   justify-content: space-between;
+    // justify-content: center;
 }
 .screen {
     flex: 1;

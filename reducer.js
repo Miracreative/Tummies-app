@@ -1,7 +1,7 @@
 const initialState = {language: 'en',
                         currentAddress: 'non location',
-                        latitude: 47.4217937,
-                        longitude: -122.083922,
+                        latitude: 24.6877,
+                        longitude: 46.7219,
                         plan: {
                             sum: 1000,
                             long: 'sar/hellp'
