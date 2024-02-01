@@ -29,6 +29,7 @@ const calendar = require("./../assets/icons/calendar.png")
 const doubleGexagon = require("./../assets/icons/double-gexaon.png")
 const backDown = require("./../assets/icons/backDown.png")
 const backFull = require("./../assets/icons/back-full.png")
+const backRedFull = require("./../assets/icons/back-red-full.png")
 
 
 
@@ -63,5 +64,6 @@ export default {
     calendar,
     doubleGexagon,
     backDown,
-    backFull
+    backFull,
+    backRedFull
 }
