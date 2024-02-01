@@ -33,7 +33,7 @@ export default function Email({navigation}) {
             source={icons.backRed}/>
 		<View
 			style={styled.wrapper}>
-			<Header onPress={() => navigation.navigate('FirstDay')} isWhite={true} isButtons={false}/>
+			<Header onPress={() => navigation.goBack()} isWhite={true} />
 			<Image
 				style={styled.image}
 				source={icons.headerName}/>

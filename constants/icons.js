@@ -13,6 +13,8 @@ const arrowWhite = require("./../assets/icons/white-arrow.png")
 const firstLocation = require("./../assets/icons/first-location.png")
 const entertament = require("./../assets/icons/entertament.png")
 const catering = require("./../assets/icons/catering.png")
+const entertamentWhite = require("./../assets/icons/entertament-white.png")
+const cateringWhite = require("./../assets/icons/catering-white.png")
 const backRed = require("./../assets/icons/back-red.png")
 const boy = require("./../assets/icons/boy.png")
 const girl = require("./../assets/icons/girl.png")
@@ -46,6 +48,8 @@ export default {
     firstLocation,
     entertament,
     catering,
+    entertamentWhite,
+    cateringWhite,
     backRed,
     girl,
     boy,
