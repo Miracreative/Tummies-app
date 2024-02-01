@@ -15,7 +15,7 @@ const SlideItem = ({item}) => {
     return (
         <View style={[styled.container, {width}]}>
             <ImageBackground source={item.image}
-            resizeMode="contain" 
+            resizeMode="contain"
                     style={[styled.image]}>
 
                 <View style={styled.textContainer}>
