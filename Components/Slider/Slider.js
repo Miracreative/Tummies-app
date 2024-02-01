@@ -41,10 +41,10 @@ const Slider = () => {
         <View style={styled.container}>
             <View
              style={{
-                flex: 1,
+                flex: 0.9,
                 flexDirection: 'column',
-                gap: 24,
-                justifyContent: 'flex-start'
+                justifyContent: 'flex-start',
+                alignItems: 'center'
              }}>
                 <FlatList
                 data={slides}

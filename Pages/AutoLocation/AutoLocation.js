@@ -50,7 +50,7 @@ export default function AutoLocation({ navigation }) {
                 })
                 for (let item of response) {
                     let address = `${item.name}, ${item.street}, ${item.postalCode}, ${item.city}`;
-              
+                
                 setDisplayCurrentAddress(address);
                 localStorage.setItem("address", displayCurrentAddress);
                 console.log(address)

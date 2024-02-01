@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { View, TouchableOpacity, Image, Text} from 'react-native';
+import { View, TouchableOpacity, Image, Text, StatusBar} from 'react-native';
 
 import{icons} from "./../../constants";
 
@@ -14,7 +14,7 @@ const Header = ({onPress, isBack=true, isButtons=true, isWhite=false}) => {
     const dispatch = useDispatch();
 
     return (
-        <View style={styled.header}>
+        <View style={[styled.header, {paddingTop: StatusBar.currentHeight}]}>
             <View
                 style={styled.header__wrapper}>
                 
@@ -98,6 +98,7 @@ const Header = ({onPress, isBack=true, isButtons=true, isWhite=false}) => {
             
         </View>
     )
+
 }
 
 export default Header;

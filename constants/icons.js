@@ -26,6 +26,7 @@ const pink = require("./../assets/icons/pink.png")
 const calendar = require("./../assets/icons/calendar.png")
 const doubleGexagon = require("./../assets/icons/double-gexaon.png")
 const backDown = require("./../assets/icons/backDown.png")
+const backFull = require("./../assets/icons/back-full.png")
 
 
 
@@ -58,4 +59,5 @@ export default {
     calendar,
     doubleGexagon,
     backDown,
+    backFull
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Image, Text, StyleSheet, useWindowDimensions} from 'react-native';
+import { View, Image, Text, StyleSheet, useWindowDimensions, ImageBackground} from 'react-native';
 
 import styled from "./slideItem.scss";
 
@@ -14,17 +14,19 @@ const SlideItem = ({item}) => {
     }
     return (
         <View style={[styled.container, {width}]}>
-            <Image source={item.image} 
-                    style={[styled.image, {width, resizeMode: 'contain'}]}/>
+            <ImageBackground source={item.image}
+            resizeMode="contain" 
+                    style={[styled.image]}>
 
-            <View>
-                <Text
-                    style={styled.title}>{item.title}</Text>
-                {
-                    returnText()
-                }
-                  
-            </View>
+                <View style={styled.textContainer}>
+                    <Text
+                        style={styled.title}>{item.title}</Text>
+                    {
+                        returnText()
+                    }
+                </View>
+            </ImageBackground>    
+      
         </View>
     )
 }

@@ -18,6 +18,7 @@ export default function ChooseLocation({ navigation }) {
     const dispatch = useDispatch();
     const {t} = useTranslation();
 	const [location, setLocation] = useState();
+    const [available, setAvailable] = useState(false);
     const [displayCurrentAddress, setDisplayCurrentAddress] = useState(
         'Wait, we are fetching you location...'
       );
@@ -92,6 +93,11 @@ export default function ChooseLocation({ navigation }) {
                         for (let item of response) {
                             let address = `${item.name}, ${item.street}, ${item.postalCode}, ${item.city}`;
                             setDisplayCurrentAddress(address)
+                            if(item.city?.indexOf('Riyadh') || item.city?.indexOf('الرياض')) {
+                                setAvailable(true)
+                            } else {
+                                setAvailable(false)
+                            }
                         }
                     }
                         getPermissions2();
@@ -132,10 +138,13 @@ export default function ChooseLocation({ navigation }) {
                             source={icons.pin} 
                             style={styled.choose__image}/>
                     <Text style={styled.choose__address}>{displayCurrentAddress}</Text>
+                    {
+                        available ? null : <Text style={[styled.choose__text, {color: 'red', fontSize: 14}]}>invalid delivery area</Text>
+                    }
                         <BtnButton onPress={() => {
                             navigation.navigate("ApplyLocation");
                             dispatch(addr(displayCurrentAddress))
-                        }} title={t('add')} buttonStyle={{backgroundColor: '#F55926'}} textStyle={{color: 'rgba(244, 237, 225, 1)'}}/>
+                        }} title={t('add')} buttonStyle={{backgroundColor: '#F55926', opacity: available ? 1 : 0.7, pointerEvents: available ? 'auto' : 'none'}} textStyle={{color: 'rgba(244, 237, 225, 1)'}}/>
                 </View>
             </BottomSheet>
             </View>
