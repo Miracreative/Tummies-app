@@ -38,17 +38,29 @@
         height: 40px;
         background-color: rgba(245, 89, 38, 1);
         border-radius: 40px;
-        font-size: 16px;
         text-align: center;
         display: flex;
         align-items: center;
+        &_white {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 1);
+            border-radius: 40px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+        }
     }
     &__text {
         text-align: center;
         color: #ffffff;
-        font-size: 16px;
         font-weight: 700;
         margin: auto;
-
+        &_red {
+        text-align: center;
+        color: rgba(245, 89, 38, 1);
+        font-weight: 700;
+        margin: auto;
+        }
     }
 }

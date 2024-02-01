@@ -1,7 +1,5 @@
 .email {
     flex: 1;
-    background-color: rgba(244, 237, 225, 1);
-    position: relative;
     &__img {
         object-fit: contain;
         margin: 20px auto 0 10%;
@@ -79,11 +77,14 @@
     object-fit: contain;
 }
 .back {
-    position: absolute;
+    flex: 1;
+    justify-content: space-between;
+}
+.container {
+    flex: 1;
+    background-color: #F3EDDF;
     width: 100%;
-    object-fit: cover;
-    height: 470px;
-    top: 0;
-    left: 0;
-    z-index: -2;
+    // justify-content: flex-start;
+    position: relative;
+    justify-content: space-between;
 }

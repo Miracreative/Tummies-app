@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import {Text, View,SafeAreaView, Image, TextInput, KeyboardAvoidingView, TouchableOpacity } from 'react-native';
+import {Text, View, SafeAreaView, Image, TextInput, KeyboardAvoidingView, TouchableOpacity, ImageBackground } from 'react-native';
+import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 import {useTranslation} from 'react-i18next';
 import BtnButton from '../../Components/Button/Button';
 import {icons} from "../../constants";
@@ -23,17 +24,21 @@ export default function Email({navigation}) {
         else {
           setEmail(text)
           setValid(true)
-          setDisable(false)
+          setDisable(false) 
         }
       }
     return (
+        <View style={styled.container}>
+             <ImageBackground
+                resizeMode='cover'
+                style={styled.back}
+                source={icons.backRedFull}>
+    
         <SafeAreaView style={styled.email}>
-           <Image
-            style={styled.back}
-            source={icons.backRed}/>
+          
 		<View
 			style={styled.wrapper}>
-			<Header onPress={() => navigation.navigate('FirstDay')} isWhite={true} isButtons={false}/>
+			<Header onPress={() => navigation.goBack()} isWhite={true} />
 			<Image
 				style={styled.image}
 				source={icons.headerName}/>
@@ -46,8 +51,8 @@ export default function Email({navigation}) {
             style={{position: 'relative', flex: .45}}>
                 
             <Text
-                style={styled.email__title}>
-                Email
+                style={[styled.email__title, {fontSize: RFValue ( 22,  740)}]}>
+                E-mail
             </Text>
             <TextInput
                 style={styled.email__input}
@@ -74,8 +79,10 @@ export default function Email({navigation}) {
                 </View>
             </View>
         </KeyboardAvoidingView>
-    </SafeAreaView>
         
+    </SafeAreaView>
+    </ImageBackground>
+    </View>
     )
 
    
