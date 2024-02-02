@@ -18,6 +18,8 @@
     "next": "Next",
     "enterName": "Enter the name",
     "name": "Name",
+    "lastName": "Last Name",
+    "age" : "Age",
     "ageTitle": "What is your child's age?",
     "ageText": "Men and women have different metabolic profiles and nutritionals needs.",
     "resultsTitle": "Your results", 
