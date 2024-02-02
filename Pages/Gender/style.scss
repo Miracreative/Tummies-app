@@ -1,6 +1,5 @@
 .gender {
     flex: 1;
-    align-items: center;
     justify-content: space-between;
     background-color: #F3EDDF;
     position: relative;
@@ -54,4 +53,9 @@
     &__icon {
         object-fit: contain;
     }
+}
+.back {
+    flex: 1;
+   justify-content: space-between;
+    // justify-content: center;
 }
