@@ -16,7 +16,9 @@ const initialState = {language: 'en',
                             children1: {
                                 gender: '',
                                 name: '',
-                                age: 15
+                                lastName: '',
+                                age: 15,
+                                photo: ''
                             }
                             
                         },
@@ -91,6 +93,28 @@ const reducer = (state = initialState, action) => {
                     children1: {
                         ...state.childrens.children1,
                         name: action.payload
+                    }
+                }
+            }
+        case 'LASTNAME1':
+            return {
+                ...state,
+                childrens: {
+                    ...state.childrens,
+                    children1: {
+                        ...state.childrens.children1,
+                        lastName: action.payload
+                    }
+                }
+            }
+        case 'PHOTO1':
+            return {
+                ...state,
+                childrens: {
+                    ...state.childrens,
+                    children1: {
+                        ...state.childrens.children1,
+                        photo: action.payload
                     }
                 }
             }

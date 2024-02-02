@@ -18,6 +18,10 @@ const cateringWhite = require("./../assets/icons/catering-white.png")
 const backRed = require("./../assets/icons/back-red.png")
 const boy = require("./../assets/icons/boy.png")
 const girl = require("./../assets/icons/girl.png")
+const boyRing = require("./../assets/icons/boy-ring.png")
+const girlRing = require("./../assets/icons/girl-ring.png")
+const boyEdit = require("./../assets/icons/boy-edit.png")
+const girlEdit = require("./../assets/icons/girl-edit.png")
 const redBoy = require("./../assets/icons/redBoy.png")
 const redGirl = require("./../assets/icons/redGirl.png")
 const gexagon = require("./../assets/icons/gexagon.png")
@@ -30,7 +34,7 @@ const doubleGexagon = require("./../assets/icons/double-gexaon.png")
 const backDown = require("./../assets/icons/backDown.png")
 const backFull = require("./../assets/icons/back-full.png")
 const backRedFull = require("./../assets/icons/back-red-full.png")
-
+const photoPhone = require("./../assets/icons/photo-phone.png")
 
 
 export default {
@@ -54,6 +58,10 @@ export default {
     backRed,
     girl,
     boy,
+    girlRing,
+    boyRing,
+    girlEdit,
+    boyEdit,
     redBoy,
     redGirl,
     gexagon,
@@ -65,5 +73,6 @@ export default {
     doubleGexagon,
     backDown,
     backFull,
-    backRedFull
+    backRedFull,
+    photoPhone
 }

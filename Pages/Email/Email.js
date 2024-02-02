@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Text, View, SafeAreaView, Image, TextInput, KeyboardAvoidingView, TouchableOpacity, ImageBackground, Platform, StyleSheet, TouchableWithoutFeedback,Keyboard,   Button, } from 'react-native';
+import {Text, View, SafeAreaView, Image, TextInput, KeyboardAvoidingView, TouchableOpacity, ImageBackground, Platform, StyleSheet, TouchableWithoutFeedback,Keyboard } from 'react-native';
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 import {userEmail} from './../../actions';
 import { useDispatch } from 'react-redux';
