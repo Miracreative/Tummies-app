@@ -11,7 +11,7 @@ import {lang} from '../../actions';
 import { useDispatch, useSelector } from 'react-redux';
 
 
-const Header = ({onPress, isBack=true, isButtons=true, isWhite=false}) => {
+const Header = ({onPress, isBack=true, isButtons=true, isWhite=false, lang=false}) => {
     const language = useSelector(state => state.language);
     const dispatch = useDispatch();
 
@@ -71,10 +71,12 @@ const Header = ({onPress, isBack=true, isButtons=true, isWhite=false}) => {
                         }
                    
                 </TouchableOpacity>
-                <TouchableOpacity
+                {
+                    lang ? <TouchableOpacity
                     style={styled.header__container}
                     onPress={() => dispatch(lang())}>
                         {
+                                
                             isWhite ? <View 
                             style={styled.header__ring_white}>
                             <Text 
@@ -86,7 +88,9 @@ const Header = ({onPress, isBack=true, isButtons=true, isWhite=false}) => {
                         </View>
                         }
                  
-                </TouchableOpacity>
+                </TouchableOpacity> : null
+                }
+                
             </View> : <View style={styled.header__wrapper_opacity}>
                 
                 <TouchableOpacity

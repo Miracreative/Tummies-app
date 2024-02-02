@@ -31,7 +31,7 @@
     }
     &__input {
         background-color: white;
-        margin: 0 auto 60px;
+        margin: 0 auto;
         width: 90%;
         border-radius: 20px;
         border-color: rgba(12, 3, 0, 0.50);
@@ -42,7 +42,7 @@
     }
     &__error {
         color: rgba(255, 0, 0, 1);
-        font-size: 14px;
+        // font-size: 14px;
         text-align: center;
         font-weight: 500;
     }
@@ -69,7 +69,7 @@
 .wrapper {
     // flex: .48;
     justify-content: space-between;
-    background-color: green;
+    // background-color: green;
 }
 .image {
     width: 80%;

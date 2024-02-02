@@ -1,7 +1,13 @@
 const initialState = {language: 'en',
-                        currentAddress: 'non location',
-                        latitude: 24.6877,
-                        longitude: 46.7219,
+                        userInfo: {
+                            currentAddress: 'non location',
+                            latitude: 24.6877,
+                            longitude: 46.7219,
+                            email: "user@mail.com",
+                            userName: "John Dou",
+                            userAge: 23
+                        },
+                        
                         plan: {
                             sum: 1000,
                             long: 'sar/hellp'
@@ -36,18 +42,36 @@ const reducer = (state = initialState, action) => {
         case 'LATITUDE': 
             return {
                 ...state,
-                latitude: action.payload
+                userInfo: {
+                    ...state.userInfo,
+                    latitude: action.payload
+                }
+                
             }
         case "LONGITUUDE": 
             return {
                 ...state,
-                longitude: action.payload
+                userInfo: {
+                    ...state.userInfo, 
+                    longitude: action.payload
+                }
             }
         case 'LOCATION': 
             return {
                 ...state,
-                currentAddress: action.payload
+                userInfo: {
+                    ...state.userInfo,
+                    currentAddress: action.payload
+                }
             }
+        case 'EMAIL': 
+        return {
+            ...state,
+            userInfo: {
+                ...state.userInfo,
+                email: action.payload
+            }
+        }
         case 'GENDER1':
             return {
                 ...state,

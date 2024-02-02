@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import {Text, View, SafeAreaView, Image, TextInput, KeyboardAvoidingView, TouchableOpacity, ImageBackground, Platform, StyleSheet, TouchableWithoutFeedback,Keyboard,   Button, } from 'react-native';
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
+import {userEmail} from './../../actions';
+import { useDispatch } from 'react-redux';
 import {useTranslation} from 'react-i18next';
 import BtnButton from '../../Components/Button/Button';
 import {icons} from "../../constants";
@@ -13,13 +15,14 @@ export default function Email({navigation}) {
     const [valid, setValid] = useState(true);
     const [disable, setDisable] = useState(true);
    
+    const dispatch = useDispatch();
 
     const validateEmail = (text) => {
         let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w\w+)+$/;
         if (reg.test(text) === false) {
           setEmail(text)
           setValid(false)
-          setDisable(true)
+          setDisable(true)    
         }
         else {
           setEmail(text)
@@ -54,27 +57,26 @@ export default function Email({navigation}) {
                     }
         
             </View>
-            <View style={{flex: isShowKeyboard ? 0.8 : 0.52, justifyContent: 'flex-end', backgroundColor: 'red'}}>
+            <View style={{flex: isShowKeyboard ? 0.8 : 0.52, justifyContent: 'flex-end'}}>
                 <Text
                     style={[styled.email__title, {fontSize: RFValue ( 22,  740)}]}>
                     E-mail
                 </Text>
                 <TextInput
-                    style={styled.email__input}
+                    style={[styled.email__input, {borderColor: valid ? 'rgba(12, 3, 0, 0.5)' : '#FF0000', marginBottom: valid ? 60 : 39}]}
                     value = {email}
                     onChangeText = {(text)=> {validateEmail(text);}}
                     onFocus={() => {setIsShowKeyboard(true);}}
                     onBlur={() => {setIsShowKeyboard(false);
-                        // setValid(validateEmail(text));
-                        // setDisable(validateEmail(text));
                         }}
                     
                 />
                 {valid ? 
-                null : <Text style={styled.email__error}>Enter the correct e-mail</Text>
+                null : <Text style={[styled.email__error, {fontSize: RFValue ( 14,  740)}]}>Enter the correct e-mail</Text>
                 }
                 <View style={{marginBottom: isShowKeyboard ? 5 : 20}}>
-                    <BtnButton onPress={() => navigation.navigate('Gender')} title={t('continue')} buttonStyle={{backgroundColor: '#F55926',borderWidth: 2, borderColor: '#F55926', opacity: disable  ? .7 : 1, pointerEvents: disable ? 'none' : 'auto'}} textStyle={{color: 'rgba(244, 237, 225, 1)', }}/>
+                    <BtnButton onPress={() => {navigation.navigate('Gender')
+                                                dispatch(userEmail(email))}} title={t('continue')} buttonStyle={{backgroundColor: '#F55926',borderWidth: 2, borderColor: '#F55926', opacity: disable  ? .7 : 1, pointerEvents: disable ? 'none' : 'auto'}} textStyle={{color: 'rgba(244, 237, 225, 1)', }}/>
                     <BtnButton onPress={() => navigation.navigate("Auth")} title={t('logIn')} buttonStyle={{marginTop: isShowKeyboard ? 5 : 15, marginBottom: isShowKeyboard ? 5 : 20 }} textStyle={{color: 'black'}}/>
                 </View>
 

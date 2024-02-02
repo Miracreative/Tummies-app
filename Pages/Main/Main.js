@@ -24,7 +24,7 @@ export default function Main({ navigation}) {
 				source={icons.backFull}>
 			<SafeAreaView style={{flex:1}}>
 				<View style={{flex: 0.8}}>
-					<Header onPress={() => console.log('mainScreen')} isBack={false}/>
+					<Header onPress={() => console.log('mainScreen')} isBack={false} lang={true}/>
 					<Image
 						style={styled.image}
 						source={icons.redTitle}/>
