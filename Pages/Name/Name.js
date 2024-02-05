@@ -92,6 +92,7 @@ export default function Name({ navigation }) {
 
     if (!result.canceled) {
       setImage(result.assets[0].uri);
+      // gender1 == 'boy' ? setImage(icons.boyRing) : setImage(icons.girlRing)
     }
   };
   return (
@@ -157,7 +158,8 @@ export default function Name({ navigation }) {
                                           dispatch(lastName1(lastName))
                                           dispatch(age1(age))
                                           dispatch(photo1(image))
-                                          setIsShowKeyboard(fasle)
+                                          setIsShowKeyboard(false)
+                                          Keyboard.dismiss
                                           navigation.navigate("Age")}} title={t('next')} buttonStyle={{backgroundColor: '#F55926',borderWidth: 2, borderColor: '#F55926', marginBottom: 30, opacity: (disable) ? .7 : 1, pointerEvents: (disable) ? 'none' : 'auto'}} textStyle={{color: 'rgba(244, 237, 225, 1)', }}/>
                           </View>
                       </TouchableWithoutFeedback>
