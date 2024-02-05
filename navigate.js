@@ -4,7 +4,7 @@ import FirstLocation from './Pages/Location/Location';
 import AutoLocation from './Pages/AutoLocation/AutoLocation';
 import ApplyLocation from './Pages/ApplyLocation/ApplyLocation';
 import ChooseLocation from './Pages/ChooseLocation/ChooseLocation';
-import Auth from './Pages/Auth/Auth';
+import Auth from './Pages/Authentication/Auth';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { useSelector} from 'react-redux';

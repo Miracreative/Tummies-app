@@ -21,8 +21,7 @@ export default function Main({ navigation}) {
 		<Image
 				style={styled.back}
 				source={icons.back}/>
-		<View
-			style={styled.wrapper}>
+		<View style={styled.wrapper}>
 			<Header onPress={() => console.log('mainScreen')} isBack={false}/>
 			<Image
 				style={styled.image}
