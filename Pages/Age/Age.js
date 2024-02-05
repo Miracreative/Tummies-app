@@ -11,22 +11,22 @@ import styled from "./style.scss";
 export default function Age({ navigation }) {
 
   let {t} = useTranslation();
-  const childrenAge = useSelector(state => state.childrens.children1.age);
-  const [age, setAge] = useState(childrenAge);
-  const dispatch = useDispatch();
+  // const childrenAge = useSelector(state => state.childrens.children1.age);
+  // const [age, setAge] = useState(childrenAge);
+  // const dispatch = useDispatch();
 
-  const onUserDec = () => {
-    let newAge = age + 1;
-    setAge(newAge);
-  }
-  const onUserInc = () => {
-    let newAge = age - 1;
-    setAge(newAge);
-  }
+  // const onUserDec = () => {
+  //   let newAge = age + 1;
+  //   setAge(newAge);
+  // }
+  // const onUserInc = () => {
+  //   let newAge = age - 1;
+  //   setAge(newAge);
+  // }
   return (
     
         <SafeAreaView style={styled.age}>
-          <View style={styled.age__back}>
+          {/* <View style={styled.age__back}>
             <Image style={styled.age__backImg}
                     source={icons.back}/>
           </View>
@@ -53,7 +53,7 @@ export default function Age({ navigation }) {
             </View>
             </View>
         <BtnButton onPress={() => {dispatch(age1(age))
-                                    navigation.navigate('Results')}} title={t('next')} buttonStyle={{backgroundColor: '#F55926',borderWidth: 2, borderColor: '#F55926', marginBottom: 30}} textStyle={{color: 'rgba(244, 237, 225, 1)', }}/>
+                                    navigation.navigate('Results')}} title={t('next')} buttonStyle={{backgroundColor: '#F55926',borderWidth: 2, borderColor: '#F55926', marginBottom: 30}} textStyle={{color: 'rgba(244, 237, 225, 1)', }}/> */}
     </SafeAreaView>
   );
 }
