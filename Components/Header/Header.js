@@ -1,5 +1,7 @@
 import React, {useState} from "react";
-import { View, TouchableOpacity, Image, Text} from 'react-native';
+import { View, TouchableOpacity, Image, Text, StatusBar} from 'react-native';
+import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
+
 
 import{icons} from "./../../constants";
 
@@ -9,12 +11,12 @@ import {lang} from '../../actions';
 import { useDispatch, useSelector } from 'react-redux';
 
 
-const Header = ({onPress, isBack=true, isButtons=true, isWhite=false}) => {
+const Header = ({onPress, isBack=true, isButtons=true, isWhite=false, lang=false}) => {
     const language = useSelector(state => state.language);
     const dispatch = useDispatch();
 
     return (
-        <View style={styled.header}>
+        <View style={[styled.header, {paddingTop: StatusBar.currentHeight}]}>
             <View
                 style={styled.header__wrapper}>
                 
@@ -48,26 +50,47 @@ const Header = ({onPress, isBack=true, isButtons=true, isWhite=false}) => {
                 <TouchableOpacity
                     onPress={() => console.log('entertament')}
                     style={styled.header__container}>
-                    <Image 
-                        style={styled.header__img}
-                        source={icons.entertament}/>
+                        {
+                            isWhite ?        <Image 
+                                                style={styled.header__img}
+                                                source={icons.entertamentWhite}/> :  <Image 
+                                                                style={styled.header__img}
+                                                                source={icons.entertament}/>
+                        }
+              
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress={() => console.log('catering')}
                     style={styled.header__container}>
-                    <Image 
-                        style={styled.header__img}
-                        source={icons.catering}/>
+                        {
+                            isWhite ?  <Image 
+                            style={styled.header__img}
+                            source={icons.cateringWhite}/> : <Image 
+                            style={styled.header__img}
+                            source={icons.catering}/>
+                        }
+                   
                 </TouchableOpacity>
-                <TouchableOpacity
+                {
+                    lang ? <TouchableOpacity
                     style={styled.header__container}
                     onPress={() => dispatch(lang())}>
-                   <View 
-                        style={styled.header__ring}>
-                        <Text 
-                            style={styled.header__text}>{language == 'ar' ? 'EN' : 'AR'}</Text>
-                   </View>
-                </TouchableOpacity>
+                        {
+                                
+                            isWhite ? <View 
+                            style={styled.header__ring_white}>
+                            <Text 
+                                style={[styled.header__text_red, {fontSize: RFValue ( 16,  740)}]}>{language == 'ar' ? 'EN' : 'AR'}</Text>
+                            </View> : <View 
+                                style={styled.header__ring}>
+                                <Text 
+                                    style={[styled.header__text, {fontSize: RFValue ( 16,  740)}]}>{language == 'ar' ? 'EN' : 'AR'}</Text>
+                        </View>
+                        }
+                 
+                </TouchableOpacity> : null
+                }
+                
             </View> : <View style={styled.header__wrapper_opacity}>
                 
                 <TouchableOpacity
@@ -90,7 +113,7 @@ const Header = ({onPress, isBack=true, isButtons=true, isWhite=false}) => {
                    <View 
                         style={styled.header__ring}>
                         <Text 
-                            style={styled.header__text}>{language == 'ar' ? 'EN' : 'AR'}</Text>
+                            style={[styled.header__text, {fontSize: RFValue ( 16,  740)}]}>{language == 'ar' ? 'EN' : 'AR'}</Text>
                    </View>
                 </TouchableOpacity>
             </View>
@@ -98,6 +121,7 @@ const Header = ({onPress, isBack=true, isButtons=true, isWhite=false}) => {
             
         </View>
     )
+
 }
 
 export default Header;

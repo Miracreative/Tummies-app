@@ -4,7 +4,13 @@ import FirstLocation from './Pages/Location/Location';
 import AutoLocation from './Pages/AutoLocation/AutoLocation';
 import ApplyLocation from './Pages/ApplyLocation/ApplyLocation';
 import ChooseLocation from './Pages/ChooseLocation/ChooseLocation';
+import Gender from './Pages/Gender/Gender';
 import Auth from './Pages/Authentication/Auth';
+import Name from './Pages/Name/Name';
+import Age from './Pages/Age/Age';
+import Results from './Pages/Results/Results';
+import FirstDay from './Pages/FirstDay/FirstDay';
+import Email from './Pages/Email/Email';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { useSelector} from 'react-redux';
@@ -48,6 +54,30 @@ export default function Navigate() {
                 name="Auth"
                 component={Auth}
             />
+            <Stack.Screen
+                name="Gender"
+                component={Gender}
+            />
+            <Stack.Screen
+                name="Name"
+                component={Name}
+            />
+            <Stack.Screen
+                name="Age"
+                component={Age}
+            />
+            <Stack.Screen
+                    name="Results"
+                    component={Results}
+                />
+            <Stack.Screen
+                    name="FirstDay"
+                    component={FirstDay}
+                />
+            <Stack.Screen
+                    name="Email"
+                    component={Email}
+                />
         </Stack.Navigator>
     </NavigationContainer>;
    

@@ -43,6 +43,14 @@
         "projectId": "198e719c-5621-4a60-b531-d0f9b35559a2"
       }
     },
-    "owner": "nanalit"
+    "owner": "nanalit",
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app accesses your photos to let you share them with your friends."
+        }
+      ]
+    ]
   }
 }
