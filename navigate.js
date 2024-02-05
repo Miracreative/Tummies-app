@@ -5,7 +5,7 @@ import AutoLocation from './Pages/AutoLocation/AutoLocation';
 import ApplyLocation from './Pages/ApplyLocation/ApplyLocation';
 import ChooseLocation from './Pages/ChooseLocation/ChooseLocation';
 import Gender from './Pages/Gender/Gender';
-import Auth from './Pages/Auth/Auth';
+import Auth from './Pages/Authentication/Auth';
 import Name from './Pages/Name/Name';
 import Age from './Pages/Age/Age';
 import Results from './Pages/Results/Results';
