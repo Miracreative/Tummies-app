@@ -1,9 +1,6 @@
 import React, { useState, useEffect, createContext } from 'react';
 import { Text, View,  TouchableOpacity, FlatList, Image, ImageBackground,  SafeAreaView} from 'react-native';
-// import PropTypes from "prop-types";
-// import Geolocation from 'react-native-geolocation-service'; 
 import styled from './main.scss';
-// import Geocoder from 'react-native-geocoding'; 
 import Header from '../../Components/Header/Header';
 import {icons} from "../../constants";
 import Slider from "../../Components/Slider/Slider";

@@ -5,9 +5,9 @@ import AppLoading from 'expo-app-loading';
 import styled from './styles/style.scss';
 import {gStyle} from './styles/style';
 import * as Font from 'expo-font';
-
+import NetInfo from '@react-native-community/netinfo';
 import MainStack from './navigate';
-
+import NoInternet from './Pages/Errors/NoInternet/NoInternet';
 import { createStore} from 'redux';
 import reducer from './reducer';
 import { Provider } from 'react-redux';
@@ -20,17 +20,29 @@ const fonts = () => Font.loadAsync({
   'hagrid-light': require('./assets/fonts/HagridTextTrial-Light.ttf')
 });
 
+
 export default function App() {
 
-
+  const [net, setNet] = useState(false);
+  NetInfo.fetch().then(state => {
+    setNet(state.isConnected)
+  });
 
   const [font, setFont] = useState(false);
-  if(font) {
+  if(font && net) {
       return (
+        // <Provider store={store}>
+        //   <MainStack />
+        // </Provider>
         <Provider store={store}>
-          <MainStack />
+            <NoInternet/>
         </Provider>
+      
         
+      );
+    } else if(font && !net) {
+      return (
+        <NoInternet/>
       );
     } else {
     return (

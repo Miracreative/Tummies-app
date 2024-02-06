@@ -10,7 +10,6 @@ import BtnButton from '../../Components/Button/Button';
 import {icons} from "../../constants";
 import Header from '../../Components/Header/Header';
 import styled from "./style.scss";
-import { log } from 'react-native-reanimated';
 export default function Name({ navigation }) {
 
   let {t} = useTranslation();
@@ -105,7 +104,7 @@ export default function Name({ navigation }) {
           <ImageBackground
                   resizeMode='cover'
                   style={{flex: 1}}
-                  source={icons.backFull}>
+                  source={icons.backSmall}>
                     <SafeAreaView style={{flex: 1, justifyContent: 'space-between', alignItems: 'center'}}>
                       <TouchableWithoutFeedback onPress={() => {
                                                           Keyboard.dismiss()
@@ -160,7 +159,7 @@ export default function Name({ navigation }) {
                                           dispatch(photo1(image))
                                           setIsShowKeyboard(false)
                                           Keyboard.dismiss
-                                          navigation.navigate("Age")}} title={t('next')} buttonStyle={{backgroundColor: '#F55926',borderWidth: 2, borderColor: '#F55926', marginBottom: 30, opacity: (disable) ? .7 : 1, pointerEvents: (disable) ? 'none' : 'auto'}} textStyle={{color: 'rgba(244, 237, 225, 1)', }}/>
+                                          navigation.navigate("Results")}} title={t('next')} buttonStyle={{backgroundColor: '#F55926',borderWidth: 2, borderColor: '#F55926', marginBottom: 30, opacity: (disable) ? .7 : 1, pointerEvents: (disable) ? 'none' : 'auto'}} textStyle={{color: 'rgba(244, 237, 225, 1)', }}/>
                           </View>
                       </TouchableWithoutFeedback>
                       
