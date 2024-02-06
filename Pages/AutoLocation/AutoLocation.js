@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { Text, View, Image, Alert} from 'react-native';
+import { Text, View, Image, Alert, SafeAreaView} from 'react-native';
 import {LinearGradient} from 'expo-linear-gradient';
 import * as Location from 'expo-location';
-import MapView, {Marker, PROVIDER_GOOGLE, PROVIDER_DEFAULT } from 'react-native-maps';
+import MapView, {Marker} from 'react-native-maps';
 import {useTranslation} from 'react-i18next';
 import BottomSheet from '@gorhom/bottom-sheet';
 import 'react-native-gesture-handler';
@@ -13,8 +13,8 @@ import {icons} from "../../constants";
 import Header from '../../Components/Header/Header';
 import styled from "./style.scss";
 export default function AutoLocation({ navigation }) {
-    const latitude = useSelector(state => state.latitude);
-    const longitude = useSelector(state => state.longitude);
+    const latitude = useSelector(state => state.userInfo.latitude);
+    const longitude = useSelector(state => state.userInfo.longitude);
     const dispatch = useDispatch();
     const {t} = useTranslation();
 	const [location, setLocation] = useState();
@@ -96,16 +96,59 @@ export default function AutoLocation({ navigation }) {
   return (
     
         <View style={styled.location}>
-            <Header onPress={() => navigation.navigate("FirstLocation")} isButtons={false}/>
-            <View 
+            <SafeAreaView style={styled.location}>
+                <Header onPress={() => navigation.goBack()} isButtons={false}/>
+                <LinearGradient
+                    colors={['black', 'gray', 'transparent']}
+                    style={styled.location__gradient}>
+                </LinearGradient>
+                <MapView style={styled.location__map}
+                    initialRegion={{
+                        latitude: latitude,
+                        longitude: longitude,
+                        latitudeDelta: .1,
+                        longitudeDelta: .1
+
+                    }}
+                    region={myRegion}
+                        >
+                    <Marker 
+                        coordinate={myRegion} 
+                        // draggable
+                        // onDragEnd={(e) => setLatitude(e.nativeEvent.coordinate.latitude)}
+                        style={styled.location__pin}>
+                            <Image
+                            source={icons.pin} />
+                    </Marker>
+                </MapView>
+                    <BottomSheet 
+                    index={0}
+                    snapPoints={snapPoints}
+                    backgroundStyle={borderRadius= '20px 20px 0 0' }>
+                    <View>
+                        <Image 
+                                source={icons.pin} 
+                                style={styled.location__image}/>
+                        <Text style={styled.location__address}>{displayCurrentAddress}</Text>
+                            <BtnButton onPress={() => {
+                                navigation.navigate("ApplyLocation");
+                                dispatch(addr(displayCurrentAddress))
+                            }} title={t('add')} buttonStyle={{backgroundColor: '#F55926'}} textStyle={{color: 'rgba(244, 237, 225, 1)'}}/>
+                    </View>
+                </BottomSheet>
+            </SafeAreaView>
+            
+            {/* <View 
             style={{
-                flex: 1
+                flex: 1,
+                position: 'relative',
             }}>
                 <LinearGradient
                     colors={['black', 'gray', 'transparent']}
                     style={styled.location__gradient}>
-                    </LinearGradient>
-                <MapView
+                    </LinearGradient> */}
+                  
+                {/* <MapView
                     // onPress={(e) => console.log(e.nativeEvent.coordinate)}
                     style={styled.location__map}
                     initialRegion={{
@@ -127,8 +170,8 @@ export default function AutoLocation({ navigation }) {
                             <Image
                             source={icons.pin} />
                     </Marker>
-                </MapView>
-            <BottomSheet 
+                </MapView> */}
+            {/* <BottomSheet 
                 index={0}
                 snapPoints={snapPoints}
                 backgroundStyle={borderRadius= '20px 20px 0 0' }>
@@ -143,7 +186,7 @@ export default function AutoLocation({ navigation }) {
                         }} title={t('add')} buttonStyle={{backgroundColor: '#F55926'}} textStyle={{color: 'rgba(244, 237, 225, 1)'}}/>
                 </View>
             </BottomSheet>
-            </View>
+            </View> */}
     </View>
     
     

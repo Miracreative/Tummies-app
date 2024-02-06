@@ -2,7 +2,6 @@
   "expo": {
     "name": "newsApp",
     "slug": "newsApp",
-    "plugins": ["@react-native-firebase/app", "@react-native-firebase/auth"],
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -25,7 +24,11 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.nanalit.newsApp",
+      "entitlements": {
+        "com.apple.developer.networking.wifi-info": true
+      }
     },
     "android": {
       "googleServicesFile": "./google-services.json",
@@ -45,6 +48,7 @@
     },
     "owner": "nanalit",
     "plugins": [
+      "@react-native-firebase/app", "@react-native-firebase/auth",
       [
         "expo-image-picker",
         {
