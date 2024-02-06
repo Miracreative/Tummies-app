@@ -12,9 +12,9 @@ import styled from "./style.scss";
 export default function ApplyLocation({ navigation }) {
 	
     const {t} = useTranslation();
-    const latitude = useSelector(state => state.latitude);
-    const longitude = useSelector(state => state.longitude);
-    const currentAddress = useSelector(state => state.currentAddress);
+    const latitude = useSelector(state => state.userInfo.latitude);
+    const longitude = useSelector(state => state.userInfo.longitude);
+    const currentAddress = useSelector(state => state.userInfo.currentAddress);
     const myRegion = {
         latitude: latitude,
         longitude: longitude,

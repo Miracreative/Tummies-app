@@ -123,7 +123,7 @@ export default function FirstDay({ navigation }) {
               <Text style={styled.calendar__price}>{num}</Text>
               <Text style={styled.calendar__text}>{long}</Text>
             </View>
-        <BtnButton onPress={() => {navigation.navigate("Email")
+        <BtnButton onPress={() => {navigation.navigate("FirstLocation")
                                   dispatch(time(active))
                                   dispatch(time(`${weekDay}, ${mounth} ${day},  ${year}`))}} title={t('continue')} buttonStyle={{backgroundColor: '#F55926',borderWidth: 2, borderColor: '#F55926', marginBottom: 80}} textStyle={{color: 'rgba(244, 237, 225, 1)', }}/>
          <View style={styled.calendar__backDown}>

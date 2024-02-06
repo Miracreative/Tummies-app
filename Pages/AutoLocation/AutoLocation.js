@@ -125,7 +125,7 @@ export default function AutoLocation({ navigation }) {
                     index={0}
                     snapPoints={snapPoints}
                     backgroundStyle={borderRadius= '20px 20px 0 0' }>
-                    <View>
+                    <View style={{justifyContent: 'space-between'}}> 
                         <Image 
                                 source={icons.pin} 
                                 style={styled.location__image}/>
@@ -137,56 +137,6 @@ export default function AutoLocation({ navigation }) {
                     </View>
                 </BottomSheet>
             </SafeAreaView>
-            
-            {/* <View 
-            style={{
-                flex: 1,
-                position: 'relative',
-            }}>
-                <LinearGradient
-                    colors={['black', 'gray', 'transparent']}
-                    style={styled.location__gradient}>
-                    </LinearGradient> */}
-                  
-                {/* <MapView
-                    // onPress={(e) => console.log(e.nativeEvent.coordinate)}
-                    style={styled.location__map}
-                    initialRegion={{
-                        latitude: latitude,
-                        longitude: longitude,
-                        latitudeDelta: .1,
-                        longitudeDelta: .1
-
-                    }}
-                    region={myRegion}
-                    showsUserLocation={true}
-                    onRegionChangeComplete={region => {region}}
-                    >
-                    <Marker 
-                        coordinate={myRegion} 
-                        // draggable
-                        // onDragEnd={(e) => setLatitude(e.nativeEvent.coordinate.latitude)}
-                        style={styled.location__pin}>
-                            <Image
-                            source={icons.pin} />
-                    </Marker>
-                </MapView> */}
-            {/* <BottomSheet 
-                index={0}
-                snapPoints={snapPoints}
-                backgroundStyle={borderRadius= '20px 20px 0 0' }>
-                <View>
-                    <Image 
-                            source={icons.pin} 
-                            style={styled.location__image}/>
-                    <Text style={styled.location__address}>{displayCurrentAddress}</Text>
-                        <BtnButton onPress={() => {
-                            navigation.navigate("ApplyLocation");
-                            dispatch(addr(displayCurrentAddress))
-                        }} title={t('add')} buttonStyle={{backgroundColor: '#F55926'}} textStyle={{color: 'rgba(244, 237, 225, 1)'}}/>
-                </View>
-            </BottomSheet>
-            </View> */}
     </View>
     
     

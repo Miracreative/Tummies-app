@@ -18,7 +18,7 @@ export default function Name({ navigation }) {
   const [validName, setValidName] = useState(true);
   const [lastName, setLastName] = useState('');
   const [validLastName, setValidLastName] = useState(true);
-  const [age, setAge] = useState('');
+  const [age, setAge] = useState(null);
   const [validAge, setValidAge] = useState(true);
   const [disable, setDisable] = useState(true);
   const [image, setImage] = useState(null);
