@@ -12,3 +12,8 @@ export const lon = (l) => ({type: "LONG", payload: l});
 export const time = (t) => ({type: "TIME", payload: t});
 export const date = (d) => ({type: "DATE", payload: d});
 export const userEmail = (email) => ({type: "EMAIL", payload: email});
+export const area1 = (ar) => ({type: "AREA", payload: ar});
+export const street1 = (st) => ({type: "STREET", payload: st});
+export const build1 = (b) => ({type: "BUILDING", payload: b});
+export const flat1 = (f) => ({type: "FLAT", payload: f});
+export const instr1 = (d) => ({type: "INSTRUCTIONS", payload: d});

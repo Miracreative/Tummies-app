@@ -6,7 +6,7 @@ import MapView, {Marker} from 'react-native-maps';
 import {useTranslation} from 'react-i18next';
 import BottomSheet from '@gorhom/bottom-sheet';
 import 'react-native-gesture-handler';
-import {addr, lat, long} from './../../actions';
+import {addr, lat, long, build1, street1, area1} from './../../actions';
 import { useDispatch, useSelector } from 'react-redux';
 import BtnButton from '../../Components/Button/Button';
 import {icons} from "../../constants";
@@ -15,10 +15,14 @@ import styled from "./style.scss";
 export default function AutoLocation({ navigation }) {
     const latitude = useSelector(state => state.userInfo.latitude);
     const longitude = useSelector(state => state.userInfo.longitude);
+    
     const dispatch = useDispatch();
     const {t} = useTranslation();
 	const [location, setLocation] = useState();
     const [address, setAddress] = useState();
+    const [area, setArea] = useState();
+    const [street, setStreet] = useState();
+    const [building, setBuilding] = useState()
     // const [latitude, setLatitude] = useState(47.4217937);
     // const [longitude, setLongtitude] = useState(-122.083922);
     const [displayCurrentAddress, setDisplayCurrentAddress] = useState(
@@ -50,10 +54,11 @@ export default function AutoLocation({ navigation }) {
                 })
                 for (let item of response) {
                     let address = `${item.name}, ${item.street}, ${item.postalCode}, ${item.city}`;
-                
+                setArea(item.city);
+                setStreet(item.street);
+                setBuilding(item.name);
                 setDisplayCurrentAddress(address);
                 localStorage.setItem("address", displayCurrentAddress);
-                console.log(address)
             }
         } }
         const CheckIfLocationEnabled = async () => {
@@ -70,7 +75,6 @@ export default function AutoLocation({ navigation }) {
         
         // CheckIfLocationEnabled();
     }, [])
-
     const snapPoints = useMemo(() => ["45%", "5%"], []);
 
     // const geocode = async () => {
@@ -133,6 +137,9 @@ export default function AutoLocation({ navigation }) {
                             <BtnButton onPress={() => {
                                 navigation.navigate("ApplyLocation");
                                 dispatch(addr(displayCurrentAddress))
+                                dispatch(area1(area))
+                                dispatch(street1(street))
+                                dispatch(build1(building))
                             }} title={t('add')} buttonStyle={{backgroundColor: '#F55926'}} textStyle={{color: 'rgba(244, 237, 225, 1)'}}/>
                     </View>
                 </BottomSheet>

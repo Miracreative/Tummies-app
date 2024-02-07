@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Text, View, Image, TouchableOpacity, SafeAreaView, ScrollView} from 'react-native';
+import { Text, View, Image, TouchableOpacity, SafeAreaView, ScrollView, StatusBar, ImageBackground} from 'react-native';
 import {useTranslation} from 'react-i18next';
 import 'react-native-gesture-handler';
 import {time, date} from './../../actions';
@@ -12,8 +12,9 @@ import CalendarPicker from "react-native-calendar-picker";
 export default function FirstDay({ navigation }) {
 
   let {t} = useTranslation();
-  const num = useSelector(state => state.plan.sum);
-  const long = useSelector(state => state.plan.long);
+  const num = useSelector(state => state.childrens.children1.plan.sum);
+  console.log(num);
+  const long = useSelector(state => state.childrens.children1.plan.long);
   const [active, setActive] = useState('morning');
   const [calendar, setCalendar] = useState(false);
 
@@ -70,12 +71,18 @@ export default function FirstDay({ navigation }) {
   return (
     
         <SafeAreaView style={styled.calendar}>
-          <ScrollView style={{position: 'relative', width: '100%'}}>
+          {/* <ImageBackground
+            resizeMode='cover'
+            source={icons.backFull}
+            style={styled.calendar}> */}
+          <View style={{width: '100%', height: StatusBar.currentHeight, backgroundColor: '#FFFFFF'}}></View>
+         
+          <ScrollView style={{ width: '100%'}}>
           <View style={styled.calendar__back}>
             <Image style={styled.calendar__backImg}
                     source={icons.back}/>
           </View>
-            <Header style={{flex: 0.1}} onPress={() => navigation.navigate("Results")} isButtons={false}/>
+            <Header style={{flex: 0.1}} onPress={() => navigation.navigate("Results")} isButtons={false} isStatus={false}/>
             <View 
               style={styled.calendar__container}>
                 <Text style={styled.calendar__title}>{t('days')}</Text>
@@ -131,6 +138,7 @@ export default function FirstDay({ navigation }) {
                     source={icons.backDown}/>
           </View>
       </ScrollView>
+      {/* </ImageBackground> */}
     </SafeAreaView>
   );
 }
