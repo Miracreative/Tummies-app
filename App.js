@@ -31,11 +31,8 @@ export default function App() {
   const [font, setFont] = useState(false);
   if(font && net) {
       return (
-        // <Provider store={store}>
-        //   <MainStack />
-        // </Provider>
         <Provider store={store}>
-            <NoInternet/>
+          <MainStack />
         </Provider>
       
         
