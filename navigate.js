@@ -6,6 +6,7 @@ import ApplyLocation from './Pages/ApplyLocation/ApplyLocation';
 import ChooseLocation from './Pages/ChooseLocation/ChooseLocation';
 import Gender from './Pages/Gender/Gender';
 import Auth from './Pages/Authentication/Auth';
+import AuthConfirm from './Pages/AuthenticationConfirm/AuthenticationConfirm';
 import Name from './Pages/Name/Name';
 import Age from './Pages/Age/Age';
 import Results from './Pages/Results/Results';
@@ -53,6 +54,10 @@ export default function Navigate() {
             <Stack.Screen
                 name="Auth"
                 component={Auth}
+            />
+            <Stack.Screen
+                name="AuthConfirm"
+                component={AuthConfirm}
             />
             <Stack.Screen
                 name="Gender"

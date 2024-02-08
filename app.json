@@ -2,7 +2,6 @@
   "expo": {
     "name": "newsApp",
     "slug": "newsApp",
-    "plugins": ["@react-native-firebase/app", "@react-native-firebase/auth"],
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -45,6 +44,7 @@
     },
     "owner": "nanalit",
     "plugins": [
+      "@react-native-firebase/app", "@react-native-firebase/auth",
       [
         "expo-image-picker",
         {
