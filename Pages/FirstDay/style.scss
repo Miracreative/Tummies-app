@@ -15,7 +15,7 @@
     }
     &__backImg {
         width: 100%;
-        flex: 1;
+        // flex: 1;
         object-fit: cover;
     }
     &__container {
@@ -59,7 +59,7 @@
         flex-direction: row;
         align-items: center;
         justify-content: space-around;
-        margin-bottom: 170px;
+        margin-bottom: 20px;
         position: relative;
     }
     &__icon {
@@ -70,7 +70,7 @@
         height: 1px;
         background-color: #0C0300;
         opacity: .2;
-        margin: 90px auto 30px;
+        margin: 20px auto 30px;
     }
     &__item {
         position: relative;
@@ -133,9 +133,9 @@
         object-fit: cover;
     }
     &__picker {
-        position: absolute;
-        top: 60px;
-        right: 0;
-        z-index: 5;
+        // position: absolute;
+        // top: 60px;
+        // right: 0;
+        // z-index: 5;
     }
 }

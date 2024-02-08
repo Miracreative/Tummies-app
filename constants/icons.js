@@ -8,6 +8,7 @@ const arrow = require("./../assets/icons/arrow.png")
 const redTitle = require("./../assets/icons/red-title.png")
 const pin = require("./../assets/icons/pin.png")
 const back = require("./../assets/icons/back.png")
+const backMin = require("./../assets/icons/back-min.png")
 const slideBack = require("./../assets/icons/slide-back.png")
 const arrowWhite = require("./../assets/icons/white-arrow.png")
 const firstLocation = require("./../assets/icons/first-location.png")
@@ -50,6 +51,7 @@ export default {
     redTitle,
     pin,
     back,
+    backMin,
     slideBack,
     arrowWhite,
     firstLocation,
