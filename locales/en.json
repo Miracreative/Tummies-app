@@ -43,6 +43,7 @@
     "evening": "6 PM to 10 PM (the night before)",
     "daystext": "You can always skip a day or make changes from your settings. This is a weekly ongoing subscribtion. You can stop it it any time.",
     "total": "Total Amount",
+    "registration": "Registration",
     "noInetTitle": "no internet connection",
     "noInetText": "Check your internet connection",
     "editAddress": "Edit Address",
@@ -52,4 +53,5 @@
     "flat": "Flat",
     "street": "Street",
     "instructions": "Delivery instructions"
+
 }
