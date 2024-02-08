@@ -13,8 +13,8 @@ import {icons} from "../../constants";
 import Header from '../../Components/Header/Header';
 import styled from "./style.scss";
 export default function ChooseLocation({ navigation }) {
-    const latitude = useSelector(state => state.latitude);
-    const longitude = useSelector(state => state.longitude);
+    const latitude = useSelector(state => state.userInfo.latitude);
+    const longitude = useSelector(state => state.userInfo.longitude);
     const dispatch = useDispatch();
     const {t} = useTranslation();
 	const [location, setLocation] = useState();

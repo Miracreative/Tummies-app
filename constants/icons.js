@@ -16,6 +16,7 @@ const catering = require("./../assets/icons/catering.png")
 const entertamentWhite = require("./../assets/icons/entertament-white.png")
 const cateringWhite = require("./../assets/icons/catering-white.png")
 const backRed = require("./../assets/icons/back-red.png")
+const backSmall = require("./../assets/icons/back-small.png")
 const boy = require("./../assets/icons/boy.png")
 const girl = require("./../assets/icons/girl.png")
 const boyRing = require("./../assets/icons/boy-ring.png")
@@ -35,6 +36,7 @@ const backDown = require("./../assets/icons/backDown.png")
 const backFull = require("./../assets/icons/back-full.png")
 const backRedFull = require("./../assets/icons/back-red-full.png")
 const photoPhone = require("./../assets/icons/photo-phone.png")
+const sad = require("./../assets/icons/sad.png")
 
 
 export default {
@@ -74,5 +76,7 @@ export default {
     backDown,
     backFull,
     backRedFull,
-    photoPhone
+    photoPhone,
+    backSmall,
+    sad
 }

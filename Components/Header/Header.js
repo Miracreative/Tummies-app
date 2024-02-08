@@ -11,12 +11,12 @@ import {lang} from '../../actions';
 import { useDispatch, useSelector } from 'react-redux';
 
 
-const Header = ({onPress, isBack=true, isButtons=true, isWhite=false, lang=false}) => {
+const Header = ({onPress, isBack=true, isButtons=true, isWhite=false, lang=false, isStatus=true}) => {
     const language = useSelector(state => state.language);
     const dispatch = useDispatch();
 
     return (
-        <View style={[styled.header, {paddingTop: StatusBar.currentHeight}]}>
+        <View style={[styled.header, {paddingTop: isStatus? StatusBar.currentHeight : 0}]}>
             <View
                 style={styled.header__wrapper}>
                 

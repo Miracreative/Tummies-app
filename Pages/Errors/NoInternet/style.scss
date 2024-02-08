@@ -1,0 +1,27 @@
+.back {
+    flex: 1;
+    background-color: #DBF6FC;
+}
+.image {
+    width: 80%;
+    margin: 0 auto 80px;
+    object-fit: contain;
+}
+.title {
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+    width: 60%;
+    margin: 0 auto 40px;
+}
+.text {
+    color: white;
+    width: 40%;
+    margin: 0 auto;
+    text-align: center;
+}
+.bigImage {
+    width: 80%;
+    margin: 0 auto;
+    object-fit: contain;
+}

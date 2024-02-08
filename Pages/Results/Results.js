@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { Text, View, Image, TouchableOpacity, SafeAreaView, ScrollView, StatusBar, StyleSheet } from 'react-native';
+import { Text, View, Image, TouchableOpacity, SafeAreaView, ScrollView, StatusBar, StyleSheet, ImageBackground } from 'react-native';
 import {useTranslation} from 'react-i18next';
 import 'react-native-gesture-handler';
 import {price, lon} from '../../actions';
@@ -14,6 +14,7 @@ export default function Results({ navigation }) {
   const dispatch = useDispatch();
 
   let {t} = useTranslation();
+
       let week = [];
       let weekDays = [];
       let mounthes = [];
@@ -136,52 +137,60 @@ export default function Results({ navigation }) {
     
   ]
   return (
-    
-        <SafeAreaView style={styled.results}>
+        <View style={[styled.container, {paddingTop: StatusBar.currentHeight}]}>
+          
+              <SafeAreaView style={styled.results}>
+              <ImageBackground
+                  resizeMode="cover"
+                  style={styled.back}
+                  source={icons.pink}>
+                <ScrollView style={styled.results__container}>
               
-            <ScrollView style={styled.results__contaner}>
-            <Image  
-                source={icons.pink} 
-                style={styled.results__pink}/>
-                <Header style={{flex: 0.1}} onPress={() => navigation.navigate("Age")} isButtons={false}/>
-                <Text style={styled.results__title}>{t('resultsTitle')}</Text>
-                <Text style={styled.results__text}>{t('resultsDescr')}</Text>
-                <Text style={styled.results__title}>{t('menu')}</Text>
-                <View style={styled.results__dates}>
-                    {elements}
-                </View>
-                <View style={styled.results__divider}></View>
-                <View style={styled.results__dates}>
-                  {mealList}
-                </View>
-                <MealsList day={active} meal={activeMeal}/>
-                <Text style={styled.results__title}>{t('plan')}</Text>
-                <View style={styled.results__dates}>
-                  {longArrList}
-                </View>
-                {/* <View style={styled.results__divider}></View>
-                <View style={styled.results__dates}>
-                  {varietyPlanList}
-                </View> */}
-                <View style={styled.results__box}>
-                  <Text style={[styled.results__title, styled.results__title_narrow]}>{t('cost')}</Text>
-                  <View style={styled.results__ring}></View>
-                  <Text style={styled.results__descr}>{planDescriptions[long].descr1}</Text>
-                  <View style={styled.results__ring}></View>
-                  <Text style={styled.results__descr}>{planDescriptions[long].descr2}</Text>
-                  <View style={styled.results__ring}></View>
-                  <Text style={styled.results__descr}>{planDescriptions[long].descr3}</Text>
-                  <Text style={styled.results__price}>{planDescriptions[long].sum}</Text>
-                  <Text style={styled.results__valute}>{planDescriptions[long].long}</Text>
-                  <View style={styled.results__border}></View>
-                  <Image  style={styled.results__fone}
-                          source={icons.bottomFone} />
-                </View>
-                <BtnButton onPress={() => {
-                                            dispatch(price(planDescriptions[long].sum))
-                                            dispatch(lon(planDescriptions[long].long))
-                                            navigation.navigate("FirstDay")}} title={t('next')} buttonStyle={{backgroundColor: '#F55926',borderWidth: 2, borderColor: '#F55926', marginBottom: 30}} textStyle={{color: 'rgba(244, 237, 225, 1)', }}/>
-            </ScrollView>
-        </SafeAreaView>
+                    <Header style={{flex: 0.1}} onPress={() => navigation.goBack()} isButtons={false} isWhite={true} isStatus={false}/>
+                    <Text style={styled.results__title}>{t('resultsTitle')}</Text>
+                    <Text style={styled.results__text}>{t('resultsDescr')}</Text>
+                    <Text style={styled.results__title}>{t('menu')}</Text>
+                    <View style={styled.results__dates}>
+                        {elements}
+                    </View>
+                    <View style={styled.results__divider}></View>
+                    <View style={styled.results__dates}>
+                      {mealList}
+                    </View>
+                    <MealsList day={active} meal={activeMeal}/>
+                    <Text style={styled.results__title}>{t('plan')}</Text>
+                    <View style={styled.results__dates}>
+                      {longArrList}
+                    </View>
+                    {/* <View style={styled.results__divider}></View>
+                    <View style={styled.results__dates}>
+                      {varietyPlanList}
+                    </View> */}
+                    <View style={styled.results__box}>
+                      <Text style={[styled.results__title, styled.results__title_narrow]}>{t('cost')}</Text>
+                      <View style={styled.results__ring}></View>
+                      <Text style={styled.results__descr}>{planDescriptions[long].descr1}</Text>
+                      <View style={styled.results__ring}></View>
+                      <Text style={styled.results__descr}>{planDescriptions[long].descr2}</Text>
+                      <View style={styled.results__ring}></View>
+                      <Text style={styled.results__descr}>{planDescriptions[long].descr3}</Text>
+                      <Text style={styled.results__price}>{planDescriptions[long].sum}</Text>
+                      <Text style={styled.results__valute}>{planDescriptions[long].long}</Text>
+                      <View style={styled.results__border}></View>
+                      <Image  style={styled.results__fone}
+                              source={icons.bottomFone} />
+                    </View>
+                    <BtnButton onPress={() => {
+                                                dispatch(price(planDescriptions[long].sum))
+                                                dispatch(lon(planDescriptions[long].long))
+                                                navigation.navigate("FirstDay")}} title={t('next')} buttonStyle={{backgroundColor: '#F55926',borderWidth: 2, borderColor: '#F55926', marginBottom: 30}} textStyle={{color: 'rgba(244, 237, 225, 1)', }}/>
+                       
+                </ScrollView>
+                </ImageBackground>
+            </SafeAreaView>
+       
+        </View>
+    
+   
     );
 }

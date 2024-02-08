@@ -1,13 +1,12 @@
 .results {
     flex: 1;
     width: 100%;
-    padding: 40px 0 0px;
     background-color: #FFFFFF;
     &__container {
         width: 100%;
         // margin: 0 auto;
         position: relative;
-        background-color: #fff !important;
+        background-color: transparent;
         z-index: 1;
     }
     &__title {
@@ -143,4 +142,19 @@
         height: 300px;
         // z-index: -1;
     }
+}
+.container {
+    flex: 1;
+    background-color: #FF9D7D;
+    width: 100%;
+    position: relative;
+    justify-content: space-between;
+
+}
+
+.back {
+    flex: 1;
+    justify-content: flex-start;
+//    justify-content: space-between;
+    // justify-content: center;
 }
