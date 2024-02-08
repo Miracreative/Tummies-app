@@ -23,9 +23,15 @@ const FirstPayment = ({navigation}) => {
 
     const stripe = useStripe();
     return (
-        <View style={{flex: 1, backgroundColor: 'red'}}>
-            <Text>123</Text>
-        </View>
+        <SafeAreaView style={{flex: 1, backgroundColor: '#F3EDDF', position: 'relative'}}>
+            <View style={{width: '100%', height: StatusBar.currentHeight, backgroundColor: '#FFFFFF'}}></View>
+            <ScrollView style={{ width: '100%'}}>
+                <View style={styled.pay__back}>
+                    <Image style={styled.pay__backImg}
+                        source={icons.backMin}/>
+                </View>
+            </ScrollView>
+        </SafeAreaView>
     )
 }
 
