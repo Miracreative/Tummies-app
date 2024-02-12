@@ -5,7 +5,7 @@ import AppLoading from 'expo-app-loading';
 import styled from './styles/style.scss';
 import {gStyle} from './styles/style';
 import * as Font from 'expo-font';
-import NetInfo from '@react-native-community/netinfo';
+// import NetInfo from '@react-native-community/netinfo';r
 import MainStack from './navigate';
 import NoInternet from './Pages/Errors/NoInternet/NoInternet';
 import { createStore} from 'redux';
@@ -23,13 +23,13 @@ const fonts = () => Font.loadAsync({
 
 export default function App() {
 
-  const [net, setNet] = useState(false);
-  NetInfo.fetch().then(state => {
-    setNet(state.isConnected)
-  });
+  // const [net, setNet] = useState(false);
+  // NetInfo.fetch().then(state => {
+  //   setNet(state.isConnected)
+  // });
 
   const [font, setFont] = useState(false);
-  if(font && net) {
+  if(font) {
       return (
         <Provider store={store}>
           <MainStack />
@@ -37,11 +37,13 @@ export default function App() {
       
         
       );
-    } else if(font && !net) {
-      return (
-        <NoInternet/>
-      );
-    } else {
+    } 
+    // else if(font && !net) {
+    //   return (
+    //     <NoInternet/>
+    //   );
+    // } 
+    else {
     return (
       <AppLoading startAsync={fonts} onFinish={() => setFont(true)} onError={console.warn}/>
     );

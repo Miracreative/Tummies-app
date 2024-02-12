@@ -17,18 +17,18 @@ import styled from "./style.scss";
 export default function AuthConfirm({ navigation }) {
   const { t } = useTranslation();
 //   const [phoneNumber, setPhoneNumber] = useState('');
-  const [code, setCode] = useState("");
+  const [code, setCode] = useState("");53
+  const [incorrectCode, setIncorrectCode] = useState(false);
   const [confirm, setConfirm] = useState(null);
 
   const [isShowKeyboard, setIsShowKeyboard] = useState(false);
   const [valid, setValid] = useState(true);
-  const [disable, setDisable] = useState(false);
+  const [disable, setDisable] = useState(true);
   const [time, setTime] = useState(10)
   const [readySend, setReadySend] = useState(false)
   const intervalRef = useRef(0);
   const dispatch = useDispatch();
 const phoneNumber = useSelector(state => state.userInfo.phone)
-console.log(phoneNumber);
 
   useEffect(() => {
     intervalRef.current = setInterval(() => {
@@ -43,6 +43,7 @@ console.log(phoneNumber);
       }, 1000);
       return () => clearInterval(intervalRef.current)
   })
+
   const signInWithPhoneNumber = async () => {
     try {
         console.log(phoneNumber);
@@ -66,11 +67,13 @@ console.log(phoneNumber);
 
         if (userDocument.exists) {
             console.log('user exists');
+            // go to dashboard
         } else {
             console.log('user is new');
             // navigation.navigate('Detail', {uid: user.uid})
         }
     } catch (error){
+        setIncorrectCode(true)
         console.log('Ivalid code.', error);
     }
   }
@@ -126,15 +129,23 @@ console.log(phoneNumber);
 
         <Text style={styled.auth__title}>Verification code</Text>
         <TextInput
-                style={styled.auth__input}
+                style={[styled.auth__input, {textAlign: 'center', color: incorrectCode ? 'red' : 'rgba(12, 3, 0, 1)', borderColor:  incorrectCode ? 'red' : 'rgba(12, 3, 0, 1)'}]}
                 keyboardType="numeric"
                 value={code}
-                onChangeText={setCode}
+                onFocus={() => incorrectCode ? setIncorrectCode(false) : null}
+                onChangeText={value => {
+                    setCode(value)
+                    value.length > 5 ? setDisable(false) : null
+                }}
             />
         <Text style={[styled.auth__title, {color: 'rgba(245, 89, 38, 1)'}]}>The code didn 't come ?</Text>
         
         <View style={styled.auth__buttons}>
-            <TouchableOpacity onPress={signInWithPhoneNumber} style={{pointerEvents: readySend ? "auto" : "none"}}>
+            <TouchableOpacity onPress={() => {
+                signInWithPhoneNumber()
+                setTime(10)
+                setReadySend(false)
+                }} style={{pointerEvents: readySend ? "auto" : "none"}}>
                 <Text style={styled.auth__roundbtn}>{readySend ? 'Send again' : transformTime(time)}</Text>
             </TouchableOpacity>
             <BtnButton
@@ -142,7 +153,7 @@ console.log(phoneNumber);
                     confirmCode()
                 }}
                 title={t("logIn")}
-                buttonStyle={{ backgroundColor: "#F55926", borderWidth: 2, borderColor: "#F55926", opacity: disable ? 1 : 0.7, pointerEvents: disable ? "all" : "none" }}
+                buttonStyle={{ backgroundColor: "#F55926", borderWidth: 2, borderColor: "#F55926", opacity: disable ? 0.7 : 1, pointerEvents: disable ? "none" : "auto" }}
                 textStyle={{ color: "rgba(244, 237, 225, 1)" }}
             />
             <BtnButton
